@@ -88,7 +88,6 @@ class InstaBot:
             time.sleep(2)
 
         #Grab all elemnts with the 'href' xpath tag into an array.
-        #FOund a bunch of shit that wasnt relevant, but finally went through pics.
         hrefs=driver.find_elements_by_xpath("//a[@href]")
 
         #Go through array and grab the url value from each href.
@@ -97,7 +96,7 @@ class InstaBot:
         #Prints how many photos are available in the page.
         print('photos found: ' + str(len(pic_hrefs)))
 
-        # Clean up all the bullshit urls that are not relevant.
+        # Clean up hrefs array.
         pic_page_urls = [k for k in pic_hrefs if 'instagram.com/p/' in k]
 
 
